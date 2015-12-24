@@ -1,0 +1,106 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+
+
+/* This file is completely optional and not required. */
+/* Note the reference that includes it in the index.html file. */
+
+
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+.ui-icon-powericon:after {
+    background-image: url("../images/iconpower.svg");
+    /* Make your icon fit */
+    background-size: 18px 18px;
+}
+/* Fallback */
+.ui-nosvg .ui-icon-powericon:after {
+	background-image: url("../images/iconpower.png");   
+	/* Make your icon fit */
+    background-size: 18px 18px;
+}
+
+
+body {
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+html {
+    -ms-touch-action: pan-x ;
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+body {
+    -ms-touch-action: pan-y ;
+    -ms-content-zooming: none ;
+}
+
+/* allow copy-paste */
+input, textarea  {
+    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
+}
+
+body {
+    /* margin: 0.5rem ; */
+    background: white ;
+    color: black ;
+}
+.button{
+	background: #7ABA05;
+	text-decoration: none;
+}
+.ifcolor{
+	background: #7ABA05;
+	color: black;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+
+.lista_curso_dados{
+text-align: center;
+padding-top: 5px; 
+padding-bottom: 5px;	
+margin-top: 10px;
+}
+
+.aluno_perfil{
+margin-top: 5%;
+margin-left: 10%;	
+}
+
+.margin_lista{
+margin-top: 15%;
+}
+
+#lista_curso_button{
+width: 80%;
+border: 1px solid black;
+font-size: 1EM;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+#situacao{
+font-size: 0.9EM;
+color: red;
+text-align: center;
+background: lightgreen;
+}
+#custom-border-radius .ui-btn-icon-notext.ui-corner-all {
+    -webkit-border-radius: .3125em;
+    border-radius: .3125em;
+}
+
