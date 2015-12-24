@@ -10,19 +10,6 @@
 /* Disable certain interactions on touch devices */
 /* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
 /* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
-.ui-icon-powericon:after {
-    background-image: url("../images/iconpower.svg");
-    /* Make your icon fit */
-    background-size: 18px 18px;
-}
-/* Fallback */
-.ui-nosvg .ui-icon-powericon:after {
-	background-image: url("../images/iconpower.png");   
-	/* Make your icon fit */
-    background-size: 18px 18px;
-}
-
-
 body {
     -webkit-touch-callout: none ;
     -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
@@ -56,12 +43,7 @@ body {
     color: black ;
 }
 .button{
-	background: #7ABA05;
-	text-decoration: none;
-}
-.ifcolor{
-	background: #7ABA05;
-	color: black;
+	background: #2f9e41;
 	text-decoration: none;
 }
 a{
@@ -100,7 +82,6 @@ text-align: center;
 background: lightgreen;
 }
 #custom-border-radius .ui-btn-icon-notext.ui-corner-all {
-    -webkit-border-radius: .3125em;
-    border-radius: .3125em;
+-webkit-border-radius: .3125em;
+border-radius: .3125em;
 }
-

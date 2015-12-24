@@ -19,6 +19,7 @@
         </style>
 
         <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/ifsertao.css">
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
 
@@ -46,14 +47,24 @@
 
     <body>
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        <div class="upage" id="login_page" data-role="page">
+        <div class="upage portal_fundo" id="login_page" data-role="page">
+
             <div class="upage-outer">
-                <div data-role="header" class="container-group ifcolor" data-uib="jquery_mobile/header" data-ver="0">
-                    <h1>Portal do Aluno</h1>
-                    <div class="widget-container wrapping-col single-centered"></div>
-                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
-                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                <div data-role="header" class="container-group inner-element uib_w_14 ifcolor" data-uib="jquery_mobile/header" data-ver="0" data-theme="c">
+
+                    <div style="width: 25%; text-align: center;">
+
+                    </div>
+
+                    <div style="width: 50%; text-align: center;">Portal do Aluno
+                    </div>
+
+                    <div style="width: 25%; text-align: center;">
+
+                    </div>
+
                 </div>
+
                 <div class="upage-content ac0 content-area vertical-col" id="page_27_24">
                     <div class="widget uib_w_1 logo_margin logo_size" data-uib="media/img" data-ver="0">
                         <figure class="figure-align">
@@ -69,29 +80,30 @@
                     <div class="table-thing with-label widget uib_w_4 login_width login_margin login_text" data-uib="jquery_mobile/input" data-ver="0">
                         <label class="narrow-control" for="senha"></label>
                         <input class="wide-control" placeholder="Senha" type="password" name="senha" id="senha">
-                    </div><a class="widget uib_w_5 d-margins login_button login_margin" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="logar">Entrar</a>
+
+                    </div>
+
+                    <a class="widget uib_w_15 login_margin login_button" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-theme="c">Entrar</a>
+                    <br>
                     <span id="situacao"></span>
                 </div>
-
             </div>
         </div>
 
         <!-- Página Principal -->
 
-        <div class="upage" id="principal" data-role="page">
+        <div class="upage portal_fundo" id="principal" data-role="page">
             <div class="upage-outer">
-                <div data-role="header" class="container-group ifcolor" data-uib="jquery_mobile/header" data-ver="0">
+                <div data-role="header" class="container-group inner-element uib_w_14 ifcolor" data-uib="jquery_mobile/header" data-ver="0" data-theme="c">
                     <div style="width: 25%; text-align: center;">
 
                     </div>
 
-                    <div style="width: 50%; text-align: center;"><b>Portal do Aluno</b>
+                    <div style="width: 50%; text-align: center;">Portal do Aluno
                     </div>
 
                     <div style="width: 25%; text-align: center;">
-                        <div id="custom-border-radius">
-                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="ui-btn ui-icon-power ui-btn-icon-notext ui-corner-all" id="getout">Sair</a>
-                        </div>
+                        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-power ui-btn-icon-notext" id="getout">Sair</a>
                     </div>
 
                 </div>
@@ -100,8 +112,6 @@
                     <div class="widget uib_w_1 marca_logo marca_margem" data-uib="media/img" data-ver="0">
                         <figure class="figure-align">
                             <img src="images/if.png">
-
-                            <figcaption data-position="bottom"></figcaption>
                         </figure>
                     </div>
                     <div id="dados" class="content-area aluno_perfil" style="height: 20%; text-align: jusitfy; font-size: 1EM;">
