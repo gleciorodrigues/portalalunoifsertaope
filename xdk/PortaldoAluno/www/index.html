@@ -19,7 +19,9 @@
         </style>
 
         <link rel="stylesheet" href="css/app.css">
+        <!-- Customização do Layout -->
         <link rel="stylesheet" href="css/ifsertao.css">
+        <!-- -->
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
 
@@ -39,9 +41,14 @@
         <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
 
         <script>
+           
             $(document).on("click","#logar", login);
             
             $(document).on("click", "#getout", sair);
+            
+            $(document).on("click", "#lista_curso_button", disciplina);
+            
+            $.mobile.back
         </script>
     </head>
 
@@ -83,7 +90,7 @@
 
                     </div>
 
-                    <a class="widget uib_w_15 login_margin login_button" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-theme="c">Entrar</a>
+                    <a class="widget uib_w_15 login_margin login_button" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-theme="c" id="logar">Entrar</a>
                     <br>
                     <span id="situacao"></span>
                 </div>
@@ -114,7 +121,41 @@
                             <img src="images/if.png">
                         </figure>
                     </div>
-                    <div id="dados" class="content-area aluno_perfil" style="height: 20%; text-align: jusitfy; font-size: 1EM;">
+                    <div id="dados" class="content-area aluno_perfil" style="height: 15%; text-align: jusitfy; font-size: 1EM;">
+
+                    </div>
+                    <div class="widget uib_w_13 ui-content no_wrap outset-margin margin_lista" data-uib="jquery_mobile/listview" data-ver="0">
+                        <ul id="listaCursos" data-role="listview">
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="upage vertical-col left" id="curso_ano" data-role="page">
+            <div class="upage-outer">
+                <div data-role="header" class="container-group inner-element uib_w_14 ifcolor" data-uib="jquery_mobile/header" data-ver="0" data-theme="c">
+                    <div style="width: 25%; text-align: center;">
+                        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" id="back">Sair</a>
+                    </div>
+
+                    <div style="width: 50%; text-align: center;">Portal do Aluno
+                    </div>
+
+                    <div style="width: 25%; text-align: center;">
+                        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-power ui-btn-icon-notext" id="getout">Sair</a>
+                    </div>
+
+                </div>
+
+                <div class="upage-content ac0 content-area vertical-col left" id="page_27_24">
+                    <div class="widget uib_w_1 marca_logo marca_margem" data-uib="media/img" data-ver="0">
+                        <figure class="figure-align">
+                            <img src="images/if.png">
+                        </figure>
+                    </div>
+                    <div id="dados" class="content-area aluno_perfil" style="height: 15%; text-align: jusitfy; font-size: 1EM;">
 
                     </div>
                     <div class="widget uib_w_13 ui-content no_wrap outset-margin margin_lista" data-uib="jquery_mobile/listview" data-ver="0">

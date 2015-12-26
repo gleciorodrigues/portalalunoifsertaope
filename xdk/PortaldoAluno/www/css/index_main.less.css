@@ -474,8 +474,8 @@ label.narrow-control:empty + .wide-control {
 }
 @media all {
   .login_button {
-    height: 100%   !important;
-    width: 70%  !important;
+    height: 100%    !important;
+    width: 70%   !important;
     border-radius: 15px !important;
   }
 }
