@@ -41,7 +41,16 @@
         <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
 
         <script>
-            $(document).on("click","#logar", login);
+		
+            //$(document).ready(dados);
+			
+            $(document).on("click", "#getout", sair);
+			
+            
+            
+           $(document).on("click","#home", home);
+		   
+		   $("#listaCursos").change(disciplina);
         </script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
         <script type="application/javascript" src="xdk/ad/jqm_subpage.js"></script>
@@ -49,11 +58,9 @@
 
     <body>
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        <div class="upage portal_fundo" id="login_page" data-role="page">
-
+        <div class="upage portal_fundo" id="principal" data-role="page">
             <div class="upage-outer">
                 <div data-role="header" class="container-group inner-element uib_w_14 ifcolor" data-uib="jquery_mobile/header" data-ver="0" data-theme="c">
-
                     <div style="width: 25%; text-align: center;">
 
                     </div>
@@ -62,36 +69,30 @@
                     </div>
 
                     <div style="width: 25%; text-align: center;">
-
+                        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-power ui-btn-icon-notext" id="getout">Sair</a>
                     </div>
 
                 </div>
 
-                <div class="upage-content ac0 content-area vertical-col" id="page_27_24">
-                    <div class="widget uib_w_1 logo_margin logo_size" data-uib="media/img" data-ver="0">
+                <div class="upage-content ac0 content-area vertical-col left" id="page_27_24">
+                    <div class="marca_logo marca_margem" data-uib="media/img" data-ver="0">
                         <figure class="figure-align">
-                            <img src="images/logo_if.png">
-
-                            <figcaption data-position="bottom"></figcaption>
+                            <img src="images/if.png">
                         </figure>
                     </div>
-                    <div class="table-thing with-label widget uib_w_3 login_width login_margin login_text" data-uib="jquery_mobile/input" data-ver="0">
-                        <label class="narrow-control" for="login"></label>
-                        <input class="wide-control" placeholder="Matrícula" type="text" name="login" id="login">
-                    </div>
-                    <div class="table-thing with-label widget uib_w_4 login_width login_margin login_text" data-uib="jquery_mobile/input" data-ver="0">
-                        <label class="narrow-control" for="senha"></label>
-                        <input class="wide-control" placeholder="Senha" type="password" name="senha" id="senha">
+					
+                    <div id="dados" class="content-area aluno_perfil" style="height: 15%; text-align: jusitfy; font-size: 1EM;">
 
                     </div>
-
-                    <a class="widget uib_w_15 login_margin login_button" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-theme="c" id="logar">Entrar</a>
-                    <br>
-                    <span id="situacao"></span>
+                    <!--<div class="margin_lista" data-uib="jquery_mobile/listview" data-ver="0"> -->
+                       
+						<select id="listaCursos" size="5" data-theme="c" style="width: 80%; height: 200px;"></select>
+	
+					<!-- </div> -->
                 </div>
+
             </div>
         </div>
-
     </body>
 
 </html>

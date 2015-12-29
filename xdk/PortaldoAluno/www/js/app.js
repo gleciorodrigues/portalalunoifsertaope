@@ -26,12 +26,15 @@
 
 var dados_usuario = "";
 var dados_matricula = "";
+var dados_curso = "";
 var ano_entrada = "";
 var ano_saida = "";
 var sem_entrada = "";
 var sem_saida = "";
 
 function login(evt){
+				
+            //$("#situacao").html("<b class='show-page-loading-msg' data-theme='c' data-textonly='false' data-textvisible='true' data-msgtext='Entrando ...' data-inline='true' style='text-align: center'></b>");    
             $("#situacao").html("<center>Tentando Conectar...</center>");    
                  $.ajax({
             type: "GET",
@@ -49,23 +52,24 @@ function login(evt){
                 if(json.result == true){
 					dados_usuario = json.dados.nome;
 					dados_matricula = json.dados.matricula;
-                    //redireciona o usuario para pagina
+					//redireciona o usuario para pagina
                    $("#dados").html("<b>"+dados_usuario+"</b><br>"+dados_matricula);
                     
-                        $(":mobile-pagecontainer").pagecontainer("change", "#principal", { reverse: false, transition:"slide"});
+                        $(":mobile-pagecontainer").pagecontainer("change", "cursos.html", { reverse: false, transition:"slide"});
                     
                   $.ajax({
                   type: "GET",
                   url: "http://professor.webcindario.com/portaldoaluno/curso.php", 
                   data: {
-                  matricula: json.dados.matricula,
+                  matricula: dados_matricula,
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (curso){
-                 var Cursos = curso;
+				  var Cursos = curso;
+						
                      $.each(Cursos, function(i, course){
-                        dados_curso = "<div class='lista_curso_dados'><button value='"+course.cod_curso+"' name='lista_curso_id' id='lista_curso_button' data-uib='jquery_mobile/button' data-ver='0' data-role='button' data-theme='c'>"+course.nome_curso+"</button></div>";
-                         $("#listaCursos").append(dados_curso);
+                        dados_curso += "<option class='lista_curso_dados' value='"+course.cod_curso+"'> "+course.nome_curso+"";
+                         $("#listaCursos").html(dados_curso);
                      });    
 					}
                 });
@@ -80,15 +84,23 @@ function login(evt){
  //FIM DO LOGIN
 
 //FUNÇÃO PARA LOGOFF
-function sair(evt){
-			$(":mobile-pagecontainer").pagecontainer("change", "#login_page",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
-			$("#situacao").html("<center>Insira seus dados para entrar</center>"); 
+function dados(){
+	$("#dados").html("<b>"+dados_usuario+"</b><br>"+dados_matricula);		
+};
+
+function sair(evt){	
 			$("#listaCursos").empty(); //LIMPA OS DADOS 
+			$(":mobile-pagecontainer").pagecontainer("change", "index.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
+			$("#situacao").html("<center>Insira seus dados para entrar</center>"); 
 		 }; 
- 
+function home(evt){
+    $(":mobile-pagecontainer").pagecontainer("change", "cursos.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
+	};	
+	
 //BUSCA DISCIPLINA 
 function disciplina(evt){
-			 $(":mobile-pagecontainer").pagecontainer("change", "#curso_ano", { reverse: false, transition:"slide"}); //MUDA PÁGINA
+			dados_curso = $("#lista_curso_button").val();
+			
 			$.ajax({
 			type: "GET",
 			url: "http://professor.webcindario.com/portaldoaluno/disciplina.php", 
@@ -97,24 +109,20 @@ function disciplina(evt){
 					matricula: dados_matricula,
 				},            
 				 contentType: "application/json; charset=utf-8",
-				//dataType: "jsonp",
-				success: function (disc) {
-	 
-						if(disc.result == true){
-							//redireciona o usuario para pagina
-						   $("#dados").html("<b>Aluno: </b>"+dados_usuario+"<br><b>Matrícula:</b> "+dados_matricula);
+				success: function (json) {
+						   $(":mobile-pagecontainer").pagecontainer("change", "#cursoano.html#curso_ano", { reverse: false, transition:"slide"}); //MUDA PÁGINA	
+						   $("#dados").html("<b>"+dados_usuario+"</b><br>"+dados_matricula);
 							
-							$(":mobile-pagecontainer").pagecontainer("change", "#curso_disciplina", { reverse: false, transition:"slide"});
-							ano_entrada = parseInt(disc.ano_entra);
-							ano_saida = parseInt(disc.ano_sai);
+							ano_entrada = parseInt(json.ano_entra);
+							ano_saida = parseInt(json.ano_sai);
 							for($i=ano_entrada;$i<=ano_saida;$i++){
 								for($j =1; $j<=2;$j++){	
-								var ano = "<div class='lista_curso_dados'><button value='"+$i+"-"+$j+"' name='lista_curso_id' id='lista_curso_button' data-uib='jquery_mobile/button' data-ver='0' data-role='button' data-theme='c'>"+$i+"."+$j+"</button></div>";	
-								$("#lista_ano").append(ano);
-							}
+								$("#listaAnos").html("<div class='lista_curso_dados'><button value='"+$i+"-"+$j+"' name='curso_ano' id='curso_ano_id' data-uib='jquery_mobile/button' data-ver='0' data-role='button' data-theme='c'>"+$i+"."+$j+"</button></div>");	
+								
+								}
 							}
 						}
-					}
+					
 			});
         };
 
