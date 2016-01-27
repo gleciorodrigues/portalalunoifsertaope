@@ -2,12 +2,12 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json;charset=utf-8');
 
-$connect = mysqli_connect('mysql.webcindario.com', 'oneup', 'All01010101*', 'oneup');
+require "conexao.php";
 
 $arr = array();
 	
-		$usuario = addslashes($_GET['usuario']);
-		$senha = addslashes(md5($_GET['senha']));
+		$usuario = addslashes($_POST['usuario']);
+		$senha = addslashes(md5($_POST['senha']));
 		
 		//echo "select * from aluno where usuario = '{$usuario}' and senha = '{$senha}'";
 		$erro = "";
@@ -17,7 +17,7 @@ $arr = array();
  
 		if($erro == ""){
 			
-			$result = mysqli_query($connect,"SELECT * FROM usuario WHERE login = '{$usuario}' and senha = '{$senha}' AND usrtipo ='ALU'");
+			$result = mysqli_query($connect,"SELECT cod, nome FROM usuario WHERE login = '{$usuario}' and senha = '{$senha}' AND usrtipo ='ALU'");
 			if(!result){
 				$arr['msg'] .="DataBase Error: ".mysqli_error($connect);
 			}

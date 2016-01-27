@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
         <title>Portal do Aluno</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-
-        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
         <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
-
         <style>
             @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
                 @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
                 /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
         </style>
-
         <link rel="stylesheet" href="css/app.css">
         <!-- Customização do Layout -->
         <link rel="stylesheet" href="css/ifsertao.css">
         <!-- -->
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-
-        <!-- These library references (below) are just examples to give you the general idea... -->
-        <!-- <script src="lib/mc/hammer.js"></script> -->
-        <!-- <script src="lib/ft/fastclick.js"></script> -->
-
         <script src="cordova.js" id="xdkJScordova_"></script>
-
-        <script src="js/app.js"></script>
         <!-- for your event code, see README and file comments for details -->
         <script src="js/init-app.js"></script>
         <!-- for your init code, see README and file comments for details -->
@@ -39,59 +26,25 @@
         <!-- normalizes device and document ready events, see file for details -->
         <script type="application/javascript" src="lib/jquery.min.js"></script>
         <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
+		
+		<script src="js/app.js"></script>
+		<script type="text/javascript" charset="utf-8">
 
-        <script>
-            $(document).on("click","#logar", login);
-        </script>
-        <script type="application/javascript" src="js/index_user_scripts.js"></script>
-        <script type="application/javascript" src="xdk/ad/jqm_subpage.js"></script>
+		</script>
     </head>
-
-    <body>
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        <div class="upage portal_fundo" id="login_page" data-role="page">
-
-            <div class="upage-outer">
-                <div data-role="header" class="container-group inner-element uib_w_14 ifcolor" data-uib="jquery_mobile/header" data-ver="0" data-theme="c">
-
-                    <div style="width: 25%; text-align: center;">
-
-                    </div>
-
-                    <div style="width: 50%; text-align: center;">Portal do Aluno
-                    </div>
-
-                    <div style="width: 25%; text-align: center;">
-
-                    </div>
-
-                </div>
-
-                <div class="upage-content ac0 content-area vertical-col" id="page_27_24">
-                    <div class="widget uib_w_1 logo_margin logo_size" data-uib="media/img" data-ver="0">
-                        <figure class="figure-align">
-                            <img src="images/logo_if.png">
-
-                            <figcaption data-position="bottom"></figcaption>
-                        </figure>
-                    </div>
-                    <div class="table-thing with-label widget uib_w_3 login_width login_margin login_text" data-uib="jquery_mobile/input" data-ver="0">
-                        <label class="narrow-control" for="login"></label>
-                        <input class="wide-control" placeholder="Matrícula" type="text" name="login" id="login">
-                    </div>
-                    <div class="table-thing with-label widget uib_w_4 login_width login_margin login_text" data-uib="jquery_mobile/input" data-ver="0">
-                        <label class="narrow-control" for="senha"></label>
-                        <input class="wide-control" placeholder="Senha" type="password" name="senha" id="senha">
-
-                    </div>
-
-                    <a class="widget uib_w_15 login_margin login_button" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-theme="c" id="logar">Entrar</a>
-                    <br>
-                    <span id="situacao"></span>
-                </div>
-            </div>
-        </div>
-
-    </body>
-
+<body>
+	<div data-role="header" data-theme="c" data-position="fixed" data-fullscreen = "false">
+    	<h1>Portal do Aluno</h1>
+	</div>
+	<div data-uib="media/img">
+		<img src="images/logo.png" class="logo">
+	</div> 
+	<div class="login_page">
+		<input type="text" id="login" placeholder="Usuário">
+		<input type="password" id="senha" placeholder="Senha">
+		
+		<a id="entrar" data-theme="c" data-uib="jquery_mobile/button" data-ver="0" data-role="button" OnClick="entrar()" style="border-radius: 15px;">Entrar</a>
+		<span id="situacao" class="aviso"></span>
+	</div>
+</body>
 </html>

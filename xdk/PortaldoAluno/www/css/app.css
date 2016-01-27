@@ -30,6 +30,7 @@ html {
 body {
     -ms-touch-action: pan-y ;
     -ms-content-zooming: none ;
+	background: white;
 }
 
 /* allow copy-paste */
@@ -46,46 +47,110 @@ a{
 	text-decoration: none;
 	color: black;
 }
-#listaCursos
-.lista_curso_dados{
-text-align: center;
-padding-top: 5px; 
-padding-bottom: 5px;	
-margin-top: 5px;
+.logo{
+width: 30%;
+margin-left: 35%;
+margin-right: 35%;
+margin-top: 5%;
+margin-bottom: 5%;
 }
-
-.aluno_perfil{
-margin-top: 3%;
-margin-left: 10%;	
+.login_page{
+width: 70%;
+margin-left: 15%;	
+margin-right: 15%;	
 }
-
-.margin_lista{
-margin-top: 15%;
+.login_page input{
+text-align: center;	
 }
-
-#lista_curso_button{
-width: 80%;
-border: 1px solid black;
+.aviso{
 font-size: 1EM;
-padding-top: 10px;
-padding-bottom: 10px;
-border-radius: 15px;	
-background: #2f9e41;
-font-weight: bold;
-color: white;
-}
-
-#situacao{
-font-size: 0.9EM;
 color: red;
-text-align: center;
-background: lightgreen;
+font-weight: bold;	
 }
-#custom-border-radius .ui-btn-icon-notext.ui-corner-all {
--webkit-border-radius: .3125em;
-border-radius: .3125em;
-}
-.userpic{
+.profile{
 text-align: justify;
-width: 50px;	
+background: white;
+width: 80%;
+margin-top: 5%;
+margin-left: 10%;	
+margin-right: 10%;
+height: 15%;
+position: fixed;
+bottom: 0;
+top: 8%;
+}
+.profile_pic{
+float: left;
+width: 20%;	
+}
+.menu{
+width: 80%;
+margin-left: 10%;	
+margin-right: 10%;	
+margin-top: 35%;
+text-align: center;
+}
+.menu_button{
+position: relative;
+width: 90%;
+margin-left: 5%;	
+margin-right: 5%;	
+margin-top: 3%;
+background: #2f9e41;
+border: 1px solid #2f9e41;
+padding-top: 5%;
+padding-bottom: 5%;
+color: white;
+font-weight: bold;
+margin-top: 3%;
+margin-bottom: 3%;
+border-radius: 15px;
+}
+.butaum{
+border-radius: 15px;
+}
+.alerta{
+margin-top: 40%;
+width: 90%;
+margin-left: 5%;	
+margin-right: 5%;	
+background: red;
+color: white;
+padding: 10px;
+border-radius: 15px;
+}
+.dados{
+float: left;
+width: 60%;
+}
+.mapaNotas{
+margin-top: 40%;
+width: 80%;
+margin-left: 10%;	
+margin-right: 10%;	
+text-align: justify;
+border-collapse: collapse;
+}
+.title{
+text-align: center;
+}
+}
+.tabelaNotas{
+text-align: justify;
+width: 80%;
+margin-left: 10%;
+margin-right: 10%;
+border: none;
+}
+.tabelaNotas th{
+padding-right: 5px;	
+width: 70%;
+}
+.tabelaNotas td{	
+text-align: right;
+width: 30%;
+}
+.imp{
+background: #2f9e41;
+color: white;	
 }
