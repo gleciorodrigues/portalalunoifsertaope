@@ -47,110 +47,72 @@ a{
 	text-decoration: none;
 	color: black;
 }
-.logo{
-width: 30%;
-margin-left: 35%;
-margin-right: 35%;
-margin-top: 5%;
-margin-bottom: 5%;
+.alerta{
+width: 100%;
+padding: 15%;
+text-align: center;
+background: #e9fce9;
+font-weight: bold;
+color: #000000;	
+font-size: 16pt;
 }
-.login_page{
-width: 70%;
-margin-left: 15%;	
-margin-right: 15%;	
+.logotipo{
+	padding-top: 3%;
+	padding-bottom: 4%;
+	text-align: center;	
 }
-.login_page input{
-text-align: center;	
+.login{
+	padding-left: 15%;	
+	padding-right: 15%;	
+}
+.login input{
+	text-align: center;
+	font-size: 12pt;	
 }
 .aviso{
-font-size: 1EM;
-color: red;
-font-weight: bold;	
+text-align: center;
+padding: 2%;
+font-size: 11pt;
+color: #F00;
 }
-.profile{
-text-align: justify;
-background: white;
-width: 80%;
-margin-top: 5%;
-margin-left: 10%;	
-margin-right: 10%;
+.dados_aluno{
+padding: 25px;
+text-align: center;
+background: #F8F8FF;
 height: 15%;
 position: fixed;
 bottom: 0;
 top: 8%;
 }
-.profile_pic{
-float: left;
-width: 20%;	
-}
-.menu{
-width: 80%;
-margin-left: 10%;	
-margin-right: 10%;	
+.conteudo{
+padding-left: 5%;	
+padding-right: 5%;	
 margin-top: 35%;
-text-align: center;
 }
-.menu_button{
-position: relative;
-width: 90%;
-margin-left: 5%;	
-margin-right: 5%;	
-margin-top: 3%;
-background: #2f9e41;
-border: 1px solid #2f9e41;
-padding-top: 5%;
-padding-bottom: 5%;
-color: white;
+.padrao{
+background:#2f9e41;
+text-align: center;
 font-weight: bold;
-margin-top: 3%;
-margin-bottom: 3%;
 border-radius: 15px;
+margin-top: 2%;
 }
-.butaum{
-border-radius: 15px;
+.btn-success:hover{
+border-color: #FF0000;
 }
-.alerta{
-margin-top: 40%;
-width: 90%;
-margin-left: 5%;	
-margin-right: 5%;	
-background: red;
-color: white;
-padding: 10px;
-border-radius: 15px;
-}
-.dados{
-float: left;
-width: 60%;
-}
-.mapaNotas{
-margin-top: 40%;
-width: 80%;
-margin-left: 10%;	
-margin-right: 10%;	
-text-align: justify;
-border-collapse: collapse;
-}
-.title{
+.mapa_notas{
+width: 100%;
+padding-left: 5%;	
+padding-right: 5%;	
 text-align: center;
 }
+.disciplina {
+padding: 5%;
+margin: 0px;
+font-size: 15pt;  
+font-weight: bold;
+color: black;
 }
-.tabelaNotas{
-text-align: justify;
-width: 80%;
-margin-left: 10%;
-margin-right: 10%;
-border: none;
-}
-.tabelaNotas th{
-padding-right: 5px;	
-width: 70%;
-}
-.tabelaNotas td{	
-text-align: right;
-width: 30%;
-}
-.imp{
-background: #2f9e41;
-color: white;	
+.buttons{
+margin-top: 2%;
+width: 100%;
 }

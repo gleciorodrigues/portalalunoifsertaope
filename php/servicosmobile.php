@@ -173,26 +173,38 @@ if($_GET["action"] == "logar"){
 			 $ano = substr($ano, 2, -2);
 				
 				$result = mysqli_query($connect,
-				"SELECT situacao, nota1un, nota2un, nota3un, nota4un, mediageral, fal1un, fal2un, fal3un, fal4un, faltaperc
-				FROM discipaluno
-				WHERE refano = '{$ano}' AND refsem = '{$sem}' AND discipcod = '{$disciplina}' AND cursocod = '{$curso}' AND alunocod = '{$matricula}'
-				");			
-		}else{
+				"SELECT disciplina.descricao as descricao, discipaluno.situacao, COALESCE(discipaluno.nota1un,'') as nota1un, COALESCE(discipaluno.nota2un,'') as nota2un,
+				COALESCE('',discipaluno.nota3un) as nota3un, COALESCE(discipaluno.nota4un,'') as nota4un, COALESCE(discipaluno.mediageral,'') as mediageral, 
+				COALESCE(discipaluno.fal1un,'') as fal1un, COALESCE(discipaluno.fal2un,'') as fal2un,
+				COALESCE(discipaluno.fal3un,'') as fal3un, COALESCE(discipaluno.fal4un,'') as fal4un, COALESCE(discipaluno.faltaperc,'') as faltaperc
+				FROM disciplina, discipaluno
+				WHERE discipaluno.refano = '{$ano}' AND discipaluno.refsem = '{$sem}' AND 
+				discipaluno.discipcod = '{$disciplina}' AND 
+				discipaluno.cursocod = '{$curso}' AND discipaluno.alunocod = '{$matricula}'
+				AND discipaluno.discipcod = disciplina.cod");	
+				}else{
 				$ano = substr($ano, 2);
 				$result = mysqli_query($connect,
-				"SELECT situacao, nota1un, nota2un, nota3un, nota4un, mediageral, fal1un, fal2un, fal3un, fal4un, faltaperc
-				FROM discipaluno
-				WHERE refano = '{$ano}' AND discipcod = '{$disciplina}' AND cursocod = '{$curso}' AND alunocod = '{$matricula}'");
-		}
+				"SELECT disciplina.descricao as descricao, discipaluno.situacao, COALESCE(discipaluno.nota1un,'') as nota1un, COALESCE(discipaluno.nota2un,'') as nota2un,
+				COALESCE('',discipaluno.nota3un) as nota3un, COALESCE(discipaluno.nota4un,'') as nota4un, COALESCE(discipaluno.mediageral,'') as mediageral, 
+				COALESCE(discipaluno.fal1un,'') as fal1un, COALESCE(discipaluno.fal2un,'') as fal2un,
+				COALESCE(discipaluno.fal3un,'') as fal3un, COALESCE(discipaluno.fal4un,'') as fal4un, COALESCE(discipaluno.faltaperc,'') as faltaperc
+				FROM disciplina, discipaluno
+				WHERE discipaluno.refano = '{$ano}' AND 
+				discipaluno.discipcod = '{$disciplina}' AND 
+				discipaluno.cursocod = '{$curso}' AND discipaluno.alunocod = '{$matricula}'
+				AND discipaluno.discipcod = disciplina.cod");
+				}
 			$erro = "";
 			unset($lista);
 			unset($arr);
 				if(!$result){
 					$arr['result'] = false;
-					$arr['msg'] .="DataBase Error: ".mysqli_error($connect);
+					$arr['msg'] .="Fodeu: ".mysqli_error($connect);
 				}
 				if(mysqli_num_rows($result) > 0){
 					while($obj = mysqli_fetch_array($result)){
+						$discip = utf8_encode($obj["descricao"]);
 						switch($obj["situacao"]){
 							case "M0":
 								$obj["situacao"] = "Pré-Matriculado";	
@@ -244,6 +256,8 @@ if($_GET["action"] == "logar"){
 								break;
 						}
 					$lista = array(
+					
+								"disciplina" => $discip,
 								"situacao" => $obj["situacao"],
 								"nota1" => $obj["nota1un"],
 								"nota2" => $obj["nota2un"],

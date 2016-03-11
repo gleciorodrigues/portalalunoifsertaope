@@ -13,6 +13,7 @@
                 /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
         </style>
         <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/bootstrap-min.css">
         <!-- Customização do Layout -->
         <link rel="stylesheet" href="css/ifsertao.css">
         <!-- -->
@@ -32,19 +33,22 @@
 
 		</script>
     </head>
-<body>
-	<div data-role="header" data-theme="c" data-position="fixed" data-fullscreen = "false">
-    	<h1>Portal do Aluno</h1>
+<body onload="onLoad()">
+	<div data-role="header" data-theme="c" data-position="fixed" data-fullscreen ="false" >
+	    	<h4>Portal do Aluno</h4>
 	</div>
-	<div data-uib="media/img">
-		<img src="images/logo.png" class="logo">
-	</div> 
-	<div class="login_page">
-		<input type="text" id="login" placeholder="Usuário">
-		<input type="password" id="senha" placeholder="Senha">
-		
+	
+	<div class="logotipo">
+		<img src="images/logo.png" class="img">
+	</div>
+	
+	<div class="login">
+		<input type="text" id="login" placeholder="Insira seu login">
+		<input type="password" id="senha" placeholder="Insira sua senha">
 		<a id="entrar" data-theme="c" data-uib="jquery_mobile/button" data-ver="0" data-role="button" OnClick="entrar()" style="border-radius: 15px;">Entrar</a>
-		<span id="situacao" class="aviso"></span>
+		
+<span id="situacao" class="aviso"></span>
 	</div>
+	
 </body>
 </html>

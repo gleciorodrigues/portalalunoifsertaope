@@ -13,6 +13,7 @@
                 /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
         </style>
         <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/bootstrap-min.css">
         <!-- Customização do Layout -->
         <link rel="stylesheet" href="css/ifsertao.css">
         <!-- -->
@@ -21,6 +22,7 @@
         <script src="cordova.js" id="xdkJScordova_"></script>
         <!-- for your event code, see README and file comments for details -->
         <script src="js/init-app.js"></script>
+        <script src="js/bootstrap-min.js"></script>
         <!-- for your init code, see README and file comments for details -->
         <script src="xdk/init-dev.js"></script>
         <!-- normalizes device and document ready events, see file for details -->
@@ -35,17 +37,41 @@
 		<h1>Portal do Aluno</h1>
 		<a class="ui-btn ui-btn-right ui-btn-inline ui-btn-icon-right ui-shadow ui-corner-all ui-icon-power ui-btn-icon-notext" OnClick="sair()"></a>
 	</div>
-	
 	<div class="profile">
-		<div class="profile_pic">
-			<img src="images/profile.png" width="50px">
+		<div class="dados_aluno">
+			
 		</div>
-		<div id="dados_alu" class="dados">
-		</div>
-	</div> 
-	<br>
-	<div id="mapaNotas" class="mapaNotas">
-	
+	</div>
+	<div class="conteudo">	
+			<div class="alert-success table-responsive">
+				<table class="table table-striped text-center">
+					<tr>
+						<th colspan="2" class="disciplina text-center alert-success">
+							
+						</th>
+					</tr>
+					<tr>
+						<th>Situação: </th>
+						<td class="situacao"></td>
+					</tr>
+					<tr>
+						<th>Média Geral: </th>
+						<td class="media_geral"></td>
+					</tr>
+					<tr>
+						<th>Total Faltas: </th>
+						<td class="perc_faltas"></td>
+					</tr>
+				</table>
+			</div>	
+			<center>
+				<div class="buttons">
+					<a class="btn alert-success" style="text-decoration: none; color: #008000; font-size: 14pt; font-weight: bold;" OnClick="faltas()"> < Faltas</a>
+					&nbsp;&nbsp;&nbsp;
+					<a class="btn alert-success" style="text-decoration: none; color: #008000; font-size: 14pt; font-weight: bold;" OnClick="notas()">&nbsp; Notas ></a>
+				</div>
+			</center>
+		
 	</div>
 </body>
 </html>
