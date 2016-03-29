@@ -2,7 +2,7 @@ function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
 };
 function faltas(){
-	$(":mobile-pagecontainer").pagecontainer("change", "faltas.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
+	$(":mobile-pagecontainer").pagecontainer("change", "faltas.html",{ reverse: true, transition: "pop" }); //MUDA PÁGINA
 	$.ajax({
                   type: "GET",
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
@@ -26,7 +26,7 @@ function faltas(){
     });					
 };
 function geral(){
-	$(":mobile-pagecontainer").pagecontainer("change", "mapa.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
+	$(":mobile-pagecontainer").pagecontainer("change", "mapa.html",{ reverse: false, transition: "pop" }); //MUDA PÁGINA
 	$.ajax({
                   type: "GET",
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
@@ -50,7 +50,7 @@ function geral(){
     });					
 };
 function notas(){
-	$(":mobile-pagecontainer").pagecontainer("change", "notas.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
+	$(":mobile-pagecontainer").pagecontainer("change", "notas.html",{ reverse: true, transition: "pop" }); //MUDA PÁGINA
 	$.ajax({
                   type: "GET",
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
@@ -200,7 +200,7 @@ function entrar(){
 				window.localStorage.setItem('usuario', json.dados.nome);
 				window.localStorage.setItem('matricula', json.dados.matricula);
 				//redireciona o usuario para pagina   
-                  $(":mobile-pagecontainer").pagecontainer("change", "cursos.html", { reverse: false, transition:"slide"});
+                  $(":mobile-pagecontainer").pagecontainer("change", "cursos.html", { reverse: false, transition:"fade"});
                   $.ajax({
                   type: "GET",
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
@@ -236,10 +236,9 @@ function entrar(){
 //FUNÇÃO PARA LOGOFF
 function sair(){	
 			$("#situacao").html("<center>Insira seus dados</center>");
-			$("#login").empty();
-			$("#senha").empty();
-			$(":mobile-pagecontainer").pagecontainer("change", "index.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
-					
+			$(":mobile-pagecontainer").pagecontainer("change", "index.html",{ reverse: true, transition: "fade" }); //MUDA PÁGINA
+			$("#login").val('');
+			$("#senha").val('');	
 }; 
 function onBackKeyDown(){
 	pag = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
