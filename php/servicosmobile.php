@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json;charset=utf-8');
 
 
-$connect = mysqli_connect('mysql.webcindario.com', 'oneup', 'All01010101*', 'oneup');
+$connect = mysqli_connect('host','user','password','database');
 
 $usuario = addslashes($_GET['usuario']);
 $senha = addslashes(md5($_GET['senha']));

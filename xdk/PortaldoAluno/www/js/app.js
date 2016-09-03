@@ -1,3 +1,5 @@
+var storage = window.localStorage;
+
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
 };
@@ -8,19 +10,19 @@ function faltas(){
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
-                  matricula: window.localStorage.getItem('matricula'),
-                  curso: window.localStorage.getItem('curso'),
-				  ano: window.localStorage.getItem('ano'),
-				  disciplina: window.localStorage.getItem('disciplina'),
+                  matricula: storage.getItem('matricula'),
+                  curso: storage.getItem('curso'),
+				  ano: storage.getItem('ano'),
+				  disciplina: storage.getItem('disciplina'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (mapa){
 					mostrarUsuario();
-					$(".disciplina").html(window.localStorage.getItem('disciplina_nome'));
-					$(".falta1").html(window.localStorage.getItem('falta1'));
-					$(".falta2").html(window.localStorage.getItem('falta2'));
-					$(".falta3").html(window.localStorage.getItem('falta3'));
-					$(".falta4").html(window.localStorage.getItem('falta4'));
+					$(".disciplina").html(storage.getItem('disciplina_nome'));
+					$(".falta1").html(storage.getItem('falta1'));
+					$(".falta2").html(storage.getItem('falta2'));
+					$(".falta3").html(storage.getItem('falta3'));
+					$(".falta4").html(storage.getItem('falta4'));
 						
 				  }	
     });					
@@ -32,19 +34,19 @@ function geral(){
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
-                  matricula: window.localStorage.getItem('matricula'),
-                  curso: window.localStorage.getItem('curso'),
-				  ano: window.localStorage.getItem('ano'),
-				  disciplina: window.localStorage.getItem('disciplina'),
+                  matricula: storage.getItem('matricula'),
+                  curso: storage.getItem('curso'),
+				  ano: storage.getItem('ano'),
+				  disciplina: storage.getItem('disciplina'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (mapa){
 					mostrarUsuario();
 					$(".mapa").empty();
-					$(".disciplina").html(window.localStorage.getItem('disciplina_nome'));
-					$(".situacao").html(window.localStorage.getItem('situacao'));
-					$(".media_geral").html(window.localStorage.getItem('media'));
-					$(".perc_faltas").html(window.localStorage.getItem('faltas'));
+					$(".disciplina").html(storage.getItem('disciplina_nome'));
+					$(".situacao").html(storage.getItem('situacao'));
+					$(".media_geral").html(storage.getItem('media'));
+					$(".perc_faltas").html(storage.getItem('faltas'));
 						
 				  }	
     });					
@@ -56,34 +58,34 @@ function notas(){
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
-                  matricula: window.localStorage.getItem('matricula'),
-                  curso: window.localStorage.getItem('curso'),
-				  ano: window.localStorage.getItem('ano'),
-				  disciplina: window.localStorage.getItem('disciplina'),
+                  matricula: storage.getItem('matricula'),
+                  curso: storage.getItem('curso'),
+				  ano: storage.getItem('ano'),
+				  disciplina: storage.getItem('disciplina'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (mapa){
 					mostrarUsuario();
-					$(".disciplina").html(window.localStorage.getItem('disciplina_nome'));
-					$(".nota1").html(window.localStorage.getItem('nota1'));
-					$(".nota2").html(window.localStorage.getItem('nota2'));
-					$(".nota3").html(window.localStorage.getItem('nota3'));
-					$(".nota4").html(window.localStorage.getItem('nota4'));
+					$(".disciplina").html(storage.getItem('disciplina_nome'));
+					$(".nota1").html(storage.getItem('nota1'));
+					$(".nota2").html(storage.getItem('nota2'));
+					$(".nota3").html(storage.getItem('nota3'));
+					$(".nota4").html(storage.getItem('nota4'));
 						
 				  }	
     });					
 };
 function buscaNotas(value){
 	$(":mobile-pagecontainer").pagecontainer("change", "mapa.html",{ reverse: false, transition: "slide" }); //MUDA PÁGINA
-	window.localStorage.setItem('disciplina',value);
+	storage.setItem('disciplina',value);
 	$.ajax({
                   type: "GET",
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
-                  matricula: window.localStorage.getItem('matricula'),
-                  curso: window.localStorage.getItem('curso'),
-				  ano: window.localStorage.getItem('ano'),
+                  matricula: storage.getItem('matricula'),
+                  curso: storage.getItem('curso'),
+				  ano: storage.getItem('ano'),
 				  disciplina: value,
                   },            
                   contentType: "application/json; charset=utf-8",
@@ -95,18 +97,18 @@ function buscaNotas(value){
 					}else{
 						var M = mapa;
 						$.each(M, function(x, map){
-						window.localStorage.setItem('disciplina_nome',map.disciplina);  
-						window.localStorage.setItem('situacao',map.situacao);  
-						window.localStorage.setItem('media',map.mediageral);  
-						window.localStorage.setItem('faltas',map.p_falta);  
-						window.localStorage.setItem('nota1',map.nota1);  
-						window.localStorage.setItem('nota2',map.nota2);  
-						window.localStorage.setItem('nota3',map.nota3);  
-						window.localStorage.setItem('nota4',map.nota4);  
-						window.localStorage.setItem('falta1',map.falta1);  
-						window.localStorage.setItem('falta2',map.falta2);  
-						window.localStorage.setItem('falta3',map.falta3);  
-						window.localStorage.setItem('falta4',map.falta4);  
+						storage.setItem('disciplina_nome',map.disciplina);  
+						storage.setItem('situacao',map.situacao);  
+						storage.setItem('media',map.mediageral);  
+						storage.setItem('faltas',map.p_falta);  
+						storage.setItem('nota1',map.nota1);  
+						storage.setItem('nota2',map.nota2);  
+						storage.setItem('nota3',map.nota3);  
+						storage.setItem('nota4',map.nota4);  
+						storage.setItem('falta1',map.falta1);  
+						storage.setItem('falta2',map.falta2);  
+						storage.setItem('falta3',map.falta3);  
+						storage.setItem('falta4',map.falta4);  
 						
 							$(".disciplina").html(map.disciplina);
 							$(".situacao").html(map.situacao);
@@ -120,14 +122,14 @@ function buscaNotas(value){
 }; 
 function qualquerDisc(value){
 	$(":mobile-pagecontainer").pagecontainer("change", "disciplinas.html",{ reverse: false, transition: "slide" }); //MUDA PÁGINA
-	window.localStorage.setItem('ano',value);
+	storage.setItem('ano',value);
 	$.ajax({
                 type: "GET",
                 url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                 data: {
 				action: "disciplinas",	  
-                matricula: window.localStorage.getItem('matricula'),
-                curso: window.localStorage.getItem('curso'),
+                matricula: storage.getItem('matricula'),
+                curso: storage.getItem('curso'),
 				ano: value,
                   },            
                   contentType: "application/json; charset=utf-8",
@@ -153,7 +155,7 @@ function qualquerDisc(value){
 };
 function buscarAno(value){
 	$(":mobile-pagecontainer").pagecontainer("change", "anos.html",{ reverse: false, transition: "slide" }); //MUDA PÁGINA
-	window.localStorage.setItem('curso', value);
+	storage.setItem('curso', value);
 	
 	$.ajax({
 				  
@@ -161,8 +163,8 @@ function buscarAno(value){
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                   data: {
 				  action: "lista_anos",	  
-                  matricula: window.localStorage.getItem('matricula'),
-				  curso: window.localStorage.getItem('curso'),
+                  matricula: storage.getItem('matricula'),
+				  curso: storage.getItem('curso'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (materias){
@@ -197,8 +199,8 @@ function entrar(){
             success: function (json) {
 			  $("#situacao").html("<center></center>"); 
 			    if(json.result === true){
-				window.localStorage.setItem('usuario', json.dados.nome);
-				window.localStorage.setItem('matricula', json.dados.matricula);
+				storage.setItem('usuario', json.dados.nome);
+				storage.setItem('matricula', json.dados.matricula);
 				//redireciona o usuario para pagina   
                   $(":mobile-pagecontainer").pagecontainer("change", "cursos.html", { reverse: false, transition:"fade"});
                   $.ajax({
@@ -262,7 +264,7 @@ function onBackKeyDown(){
             url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
             data: {
 				  action: "cursos",	  
-                  matricula: window.localStorage.getItem('matricula'),
+                  matricula: storage.getItem('matricula'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (curso){
@@ -286,8 +288,8 @@ function onBackKeyDown(){
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                   data: {
 				  action: "lista_anos",	  
-                  matricula: window.localStorage.getItem('matricula'),
-				  curso: window.localStorage.getItem('curso'),
+                  matricula: storage.getItem('matricula'),
+				  curso: storage.getItem('curso'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (materias){
@@ -314,9 +316,9 @@ function onBackKeyDown(){
                 url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                 data: {
 				action: "disciplinas",	  
-                matricula: window.localStorage.getItem('matricula'),
-                curso: window.localStorage.getItem('curso'),
-				ano: window.localStorage.getItem('ano'),
+                matricula: storage.getItem('matricula'),
+                curso: storage.getItem('curso'),
+				ano: storage.getItem('ano'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (disciplinas){
@@ -348,11 +350,7 @@ function onBackKeyDown(){
 	}
 	
 	
-}; 
-function mostrarUsuario(){
-	$(".dados_aluno").html("<b>"+window.localStorage.getItem('usuario')+"</b> - Mat. "+window.localStorage.getItem('matricula'));	
-}		 
-
+}; 		 
 function home(){
     $(":mobile-pagecontainer").pagecontainer("change", "cursos.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
 			$.ajax({
@@ -360,7 +358,7 @@ function home(){
                   url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
                   data: {
 				  action: "cursos",	  
-                  matricula: window.localStorage.getItem('matricula'),
+                  matricula: storage.getItem('matricula'),
                   },            
                   contentType: "application/json; charset=utf-8",
                   success: function (curso){
@@ -378,7 +376,11 @@ function home(){
 function onLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 };
-
+function mostrarUsuario(){
+	//$(".dados_aluno").html("<b>"+storage.getItem('usuario')+"</b> - Mat. "+storage.getItem('matricula'));	
+	$(".dados_aluno").html("<b>"+storage.getItem('usuario')+"</b> - Mat. "+storage.getItem('matricula'));	
+	//document.write("Teste");
+}
 			
 			
 			
