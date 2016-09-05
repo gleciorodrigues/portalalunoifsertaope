@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "04095614-abd0-4346-924c-74da310d065b",
-      "lastModifiedDate": 1460763167642,
+      "lastModifiedDate": 1473081536900,
       "creationDate": 1456925296820
     },
     "XDK-app-designer": "false",
@@ -262,7 +262,7 @@
           "android-targetSdkVersion": "19",
           "android-installLocation": "auto",
           "Orientation": "portrait",
-          "android-signed": false
+          "android-signed": true
         },
         "isActive_": true,
         "appName_": "Portal do Aluno",

@@ -1,5 +1,5 @@
 var storage = window.localStorage;
-
+var host = "http://professor.webcindario.com/portaldoaluno/";
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
 };
@@ -7,7 +7,7 @@ function faltas(){
 	$(":mobile-pagecontainer").pagecontainer("change", "faltas.html",{ reverse: true, transition: "pop" }); //MUDA PÁGINA
 	$.ajax({
                   type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
                   matricula: storage.getItem('matricula'),
@@ -31,7 +31,7 @@ function geral(){
 	$(":mobile-pagecontainer").pagecontainer("change", "mapa.html",{ reverse: false, transition: "pop" }); //MUDA PÁGINA
 	$.ajax({
                   type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
                   matricula: storage.getItem('matricula'),
@@ -55,7 +55,7 @@ function notas(){
 	$(":mobile-pagecontainer").pagecontainer("change", "notas.html",{ reverse: true, transition: "pop" }); //MUDA PÁGINA
 	$.ajax({
                   type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
                   matricula: storage.getItem('matricula'),
@@ -80,7 +80,7 @@ function buscaNotas(value){
 	storage.setItem('disciplina',value);
 	$.ajax({
                   type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "mapa",	  
                   matricula: storage.getItem('matricula'),
@@ -125,7 +125,7 @@ function qualquerDisc(value){
 	storage.setItem('ano',value);
 	$.ajax({
                 type: "GET",
-                url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                url: host+"servicosmobile.php", 
                 data: {
 				action: "disciplinas",	  
                 matricula: storage.getItem('matricula'),
@@ -160,7 +160,7 @@ function buscarAno(value){
 	$.ajax({
 				  
                   type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "lista_anos",	  
                   matricula: storage.getItem('matricula'),
@@ -189,7 +189,7 @@ function entrar(){
 			mostrarUsuario();
 			$.ajax({
             type: "GET",
-			url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+			url: host+"servicosmobile.php", 
             data: {
 			action: "logar",
             usuario: $("#login").val(),
@@ -205,7 +205,7 @@ function entrar(){
                   $(":mobile-pagecontainer").pagecontainer("change", "cursos.html", { reverse: false, transition:"fade"});
                   $.ajax({
                   type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "cursos",	  
                   matricula: json.dados.matricula,
@@ -261,7 +261,7 @@ function onBackKeyDown(){
 		$(":mobile-pagecontainer").pagecontainer("change", "cursos.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
 		$.ajax({
             type: "GET",
-            url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+            url: host+"servicosmobile.php", 
             data: {
 				  action: "cursos",	  
                   matricula: storage.getItem('matricula'),
@@ -285,7 +285,7 @@ function onBackKeyDown(){
 		$(":mobile-pagecontainer").pagecontainer("change", "anos.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
 		$.ajax({
 		          type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "lista_anos",	  
                   matricula: storage.getItem('matricula'),
@@ -313,7 +313,7 @@ function onBackKeyDown(){
 		$(":mobile-pagecontainer").pagecontainer("change", "disciplinas.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
 		$.ajax({
                 type: "GET",
-                url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                url: host+"servicosmobile.php", 
                 data: {
 				action: "disciplinas",	  
                 matricula: storage.getItem('matricula'),
@@ -355,7 +355,7 @@ function home(){
     $(":mobile-pagecontainer").pagecontainer("change", "cursos.html",{ reverse: true, transition: "slide" }); //MUDA PÁGINA
 			$.ajax({
                   type: "GET",
-                  url: "http://professor.webcindario.com/portaldoaluno/servicosmobile.php", 
+                  url: host+"servicosmobile.php", 
                   data: {
 				  action: "cursos",	  
                   matricula: storage.getItem('matricula'),
