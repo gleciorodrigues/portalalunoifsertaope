@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "04095614-abd0-4346-924c-74da310d065b",
-      "lastModifiedDate": 1473081536900,
+      "lastModifiedDate": 1473186886822,
       "creationDate": 1456925296820
     },
     "XDK-app-designer": "false",
@@ -28,7 +28,7 @@
       {
         "id": "cordova-plugin-statusbar",
         "name": "StatusBar",
-        "version": "1.0.0",
+        "version": "2.1.3",
         "originType": "cordova.io",
         "origin": "cordova-plugin-statusbar",
         "gitref": "",
@@ -41,19 +41,19 @@
         "description": "Cordova StatusBar Plugin",
         "data": {},
         "dependedBy": [],
-        "checksum": "b4e7aac6"
+        "checksum": "c0146fbc"
       },
       {
         "id": "cordova-plugin-device",
         "name": "Device",
-        "version": "1.1.0",
+        "version": "1.1.2",
         "originType": "cordova.io",
         "origin": "cordova-plugin-device",
         "gitref": "",
         "paramvals": {},
         "sourceLocation": "plugins/cordova-plugin-device",
         "selectedState": "Included",
-        "checksum": "1eae5d64",
+        "checksum": "2373ccea",
         "dependsOn": [],
         "topLevel": true,
         "permissions": {},
@@ -71,7 +71,8 @@
           "ios-configuration": "adhoc",
           "deployment-target": "6"
         },
-        "isActive_": true,
+        "isActive_": false,
+        "certificateId_": "",
         "appName_": "SAGE",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
@@ -87,9 +88,8 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "5.1.1",
+        "cordovaCLIVersion_": "6.2.0",
         "appAuthor_": "Intel XDK",
         "crosswalkVersion_": "14",
         "appVersion_": "0.0.1",
@@ -106,7 +106,8 @@
           "Orientation": "portrait",
           "Fullscreen": true
         },
-        "isActive_": true,
+        "isActive_": false,
+        "certificateId_": "",
         "appName_": "Portal do Aluno",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
@@ -123,8 +124,7 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
-        "cordovaCLIVersion_": "5.1.1",
+        "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "14",
         "appAuthor_": "Intel XDK",
         "appVersion_": "0.0.0.1",
@@ -136,6 +136,7 @@
         "name_": "WebApp",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "SAGE",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -150,7 +151,6 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
         "appAuthor_": "Intel XDK",
         "appVersion_": "0.0.1",
         "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
@@ -161,6 +161,7 @@
         "name_": "Chrome",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "SAGE",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -175,7 +176,6 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
         "appAuthor_": "Intel XDK",
         "appVersion_": "0.0.1",
         "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
@@ -186,6 +186,7 @@
         "name_": "Firefox",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "SAGE",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -200,7 +201,6 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
         "appAuthor_": "Intel XDK",
         "appVersion_": "0.0.1",
         "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
@@ -211,6 +211,7 @@
         "name_": "Facebook",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "SAGE",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -225,7 +226,6 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
         "appAuthor_": "Intel XDK",
         "appVersion_": "0.0.1",
         "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
@@ -236,6 +236,7 @@
         "name_": "WP81",
         "preferences_": {},
         "isActive_": true,
+        "certificateId_": "",
         "appName_": "SAGE",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -248,9 +249,8 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
         "appVersion_": "0.0.0.1",
-        "cordovaCLIVersion_": "5.1.1",
+        "cordovaCLIVersion_": "6.2.0",
         "appAuthor_": "Intel XDK"
       },
       "Android": {
@@ -265,6 +265,7 @@
           "android-signed": true
         },
         "isActive_": true,
+        "certificateId_": "LXd5dXDqvUWCo5uUyfWC1g2",
         "appName_": "Portal do Aluno",
         "appID_": "xdk.intel.cordova.portaldoaluno.lite",
         "appAccess_": {
@@ -276,12 +277,36 @@
           "navigation": [],
           "properties": {}
         },
-        "icons_": [],
+        "icons_": [
+          {
+            "density": "ldpi",
+            "relPath": "package-assets/logo4.png",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "density": "mdpi",
+            "relPath": "package-assets/logo3.png",
+            "width": 48,
+            "height": 48
+          },
+          {
+            "density": "hdpi",
+            "relPath": "package-assets/logo2.png",
+            "width": 72,
+            "height": 72
+          },
+          {
+            "density": "xhdpi",
+            "relPath": "package-assets/logo1.png",
+            "width": 96,
+            "height": 96
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "LXd5dXDqvUWCo5uUyfWC1g2",
-        "cordovaCLIVersion_": "5.1.1",
+        "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "15",
         "appVersion_": "1.0",
         "appDescription_": "Aplicativo utilizado para acompanhar historico escolar dos alunos do IF Sertão - PE",
@@ -291,7 +316,9 @@
     },
     "gameAssetDirectory": "asset",
     "gameMetadata": {},
-    "projectTags": [],
+    "projectTags": [
+      "XDK-disallow-legacy-whitelist"
+    ],
     "testDirectory": "test"
   }
 }

@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
-        <title>Portal do Aluno</title>
+		<title>Portal do Aluno</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
         <style>
@@ -12,13 +9,15 @@
                 @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
                 /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
         </style>
+        <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="css/bootstrap-min.css">
         <!-- Customização do Layout -->
         <link rel="stylesheet" href="css/ifsertao.css">
-        <!-- -->
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        
+		<script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
         <script src="cordova.js" id="xdkJScordova_"></script>
         <script src="js/wp8.js"></script>
         <!-- for your event code, see README and file comments for details -->
@@ -26,15 +25,9 @@
         <!-- for your init code, see README and file comments for details -->
         <script src="xdk/init-dev.js"></script>
         <!-- normalizes device and document ready events, see file for details -->
-        <script type="application/javascript" src="lib/jquery.min.js"></script>
-        <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
-		
-		<script src="js/app.js"></script>
-		<script type="text/javascript" charset="utf-8">
-
-		</script>
+		<script src="js/portal.js"></script>
     </head>
-<body onload="onLoad()">
+<body>
 	<div data-role="header" data-theme="c" data-position="fixed" data-fullscreen ="false" >
 	    	<h4>Portal do Aluno</h4>
 	</div>
@@ -46,7 +39,7 @@
 	<div class="login">
 		<input type="text" id="login" placeholder="Insira seu login">
 		<input type="password" id="senha" placeholder="Insira sua senha">
-		<a id="entrar" data-theme="c" data-uib="jquery_mobile/button" data-ver="0" data-role="button" OnClick="entrar()" style="border-radius: 15px;">Entrar</a>
+		<a id="entrar" data-theme="c" data-uib="jquery_mobile/button" data-ver="0" data-role="button" style="border-radius: 15px;" OnClick="entrar()">Entrar</a>
 		
 <span id="situacao" class="aviso"></span>
 	</div>
